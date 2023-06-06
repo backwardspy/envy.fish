@@ -57,15 +57,13 @@ function _envy_init -a conf
     echo "Creating $conf"
 
     mkdir -p (dirname $conf)
-    echo "
-services:
+    echo "services:
     postgres:
         image: postgres:latest
         ports:
             - '5432:5432'
         environment:
-            POSTGRES_HOST_AUTH_METHOD: 'trust'
-" >$conf
+            POSTGRES_HOST_AUTH_METHOD: 'trust'" >$conf
 end
 
 function _envy_switch -a conf
